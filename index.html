@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RomLux Activity Report 2025</title>
+  <link rel="icon" type="image/png" href="media/romlux-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --red: #C0392B;
+      --red-light: #D35449;
+      --dark: #2D3436;
+      --charcoal: #1a1a1a;
+      --warm-bg: #e8f0f8;
+      --warm-bg-alt: #f0f6fc;
+      --amber: #B8720F;
+      --sage: #3D6B5A;
+      --plum: #5A3D4E;
+      --gray: #555555;
+      --light-border: #b8cfe0;
+      --white: #FFFFFF;
+      --animation: all 300ms ease;
+      --shadow: 0 4px 24px rgba(0,0,0,0.12);
+      --shadow-hover: 0 12px 40px rgba(0,0,0,0.18);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: var(--animation);
+      overflow-x: clip;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.75rem 2rem;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a {
+      color: var(--charcoal); text-decoration: none; font-size: 0.85rem;
+      font-weight: 500; transition: var(--animation); position: relative;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: var(--red); transition: var(--animation);
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--red); color: white !important; padding: 0.5rem 1.2rem;
+      border-radius: 100px; font-weight: 600; font-size: 0.8rem;
+      letter-spacing: 0.3px;
+    }
+    .nav-cta:hover { background: var(--red-light); }
+    .nav-cta::after { display: none !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #2c3e6b 0%, #3a5a8a 30%, #5a8ab0 60%, #8ab5d0 100%);
+      position: relative; overflow: hidden; text-align: center; padding: 5rem 2rem 1rem;
+    }
+    .hero-content {
+      position: relative; z-index: 2; max-width: 900px; width: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      flex: 1;
+    }
+    .hero-title-block { margin-bottom: 0; }
+    .hero-title-block h1 {
+      font-size: clamp(2.5rem, 6vw, 3.8rem); font-weight: 900;
+      color: white; line-height: 1; margin: 0;
+      letter-spacing: 6px; text-transform: uppercase;
+    }
+    .hero-title-block .year {
+      font-size: clamp(4rem, 12vw, 8rem); font-weight: 900;
+      color: rgba(255,255,255,0.6); line-height: 0.85; display: block;
+      letter-spacing: 8px; margin-top: -0.05em;
+    }
+    .hero-image-wrap {
+      position: relative; width: 120%; max-width: 1100px;
+      margin: -1rem -10% 0;
+    }
+    .hero-image-wrap img {
+      width: 100%; height: auto; display: block;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 55%, transparent 95%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 55%, transparent 95%);
+    }
+    .hero-features {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+      max-width: 650px; margin: 0 auto 1.5rem; position: relative;
+    }
+    .hero-features::before {
+      content: ''; position: absolute; left: 50%; top: 10%; bottom: 10%;
+      width: 1px; background: rgba(255,255,255,0.3);
+    }
+    .hero-feature { text-align: center; padding: 0 1rem; }
+    .hero-feature-icon { margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 10px; height: 55px; }
+    .hero-feature-icon svg { flex-shrink: 0; }
+    .hero-feature-icon img { max-height: 55px; width: auto; }
+    .hero-feature h3 {
+      font-size: 1.05rem; font-weight: 800; color: white; margin-bottom: 0.25rem;
+    }
+    .hero-feature p { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0; }
+    .hero-feature .stat { font-size: 1.6rem; font-weight: 900; color: white; letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.15rem; }
+    .hero-footer {
+      margin-top: 1.5rem; padding-top: 1rem;
+    }
+    .hero-footer img { height: 50px; margin-bottom: 0.5rem; }
+    .hero-footer .url { font-size: 0.95rem; color: rgba(255,255,255,0.8); font-weight: 500; }
+
+    /* SECTIONS */
+    .section { padding: 6rem 2rem; }
+    .section-alt { background: var(--warm-bg); }
+    .section-dark { background: var(--dark); color: white; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-header .tag {
+      display: inline-block; padding: 0.3rem 1rem; border-radius: 100px;
+      background: rgba(192,57,43,0.1); color: var(--red); font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .section-dark .tag { background: rgba(211,84,73,0.2); color: var(--red-light); }
+    .section-header h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800;
+      letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 1rem;
+    }
+    .section-header p {
+      font-size: 1.05rem; color: var(--gray); max-width: 650px; margin: 0 auto;
+    }
+    .section-dark .section-header p { color: rgba(255,255,255,0.6); }
+
+    /* PRESIDENT'S MESSAGE */
+    .president {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+    .president-about h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--dark); }
+    .president-about p { margin-bottom: 1rem; color: var(--gray); font-size: 0.95rem; }
+    .president-quote {
+      background: white; border-radius: var(--radius); padding: 2.5rem;
+      box-shadow: var(--shadow); border-left: 4px solid var(--red);
+      position: relative;
+    }
+    .president-quote::before {
+      content: '\201C'; position: absolute; top: -10px; left: 20px;
+      font-size: 5rem; color: var(--red); opacity: 0.15; font-family: Georgia, serif; line-height: 1;
+    }
+    .president-quote blockquote {
+      font-size: 1.05rem; font-style: italic; color: var(--charcoal);
+      line-height: 1.8; margin-bottom: 1.5rem;
+    }
+    .president-quote .author { font-weight: 700; color: var(--dark); }
+    .president-quote .title { font-size: 0.85rem; color: var(--gray); }
+
+    /* KEY NUMBERS */
+    .numbers-layout {
+      display: grid; grid-template-columns: 2fr 3fr; gap: 3rem; align-items: start;
+    }
+    .numbers-left {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5rem;
+    }
+    .numbers-group-label {
+      grid-column: 1 / -1;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(0,0,0,0.35); margin-bottom: 0.25rem; margin-top: 0.9rem;
+      padding-bottom: 0.35rem; border-bottom: 2px solid rgba(0,0,0,0.1);
+    }
+    .numbers-group-label:first-child { margin-top: 0; }
+    .number-row {
+      padding: 0.35rem 0; display: flex; align-items: center; gap: 0.4rem;
+      white-space: nowrap;
+    }
+    .number-row .row-icon {
+      width: 28px; text-align: center; flex-shrink: 0; font-size: 1.15rem;
+    }
+    .number-row.accent-blue .row-icon { color: #2a7fbf; }
+    .number-row.accent-gold .row-icon { color: #c9960a; }
+    .number-row.accent-green .row-icon { color: #2d8a5e; }
+    .number-row.accent-coral .row-icon { color: #c0392b; }
+    .number-row.accent-teal .row-icon { color: #2a9d8f; }
+    .number-row .value {
+      font-size: 1.1rem; font-weight: 900; line-height: 1;
+      min-width: 4.5rem; text-align: left;
+    }
+    .number-row.accent-blue .value { color: #2a7fbf; }
+    .number-row.accent-gold .value { color: #c9960a; }
+    .number-row.accent-green .value { color: #2d8a5e; }
+    .number-row.accent-coral .value { color: #c0392b; }
+    .number-row.accent-teal .value { color: #2a9d8f; }
+    .number-row .metric { font-weight: 900; font-size: 0.72rem; color: rgba(0,0,0,0.65); }
+    .number-row .desc { font-size: 0.68rem; color: rgba(0,0,0,0.4); }
+    .numbers-footer {
+      grid-column: 1 / -1; margin-top: 0.75rem; padding-top: 0.6rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      font-size: 0.6rem; color: rgba(0,0,0,0.3); line-height: 1.5;
+    }
+    .numbers-right {
+      position: sticky; top: 5rem;
+    }
+    .numbers-right .numbers-title {
+      font-size: clamp(2.4rem, 4.5vw, 3.5rem); font-weight: 900; color: var(--charcoal);
+      line-height: 1.05; margin-bottom: 0.75rem; letter-spacing: -2px; text-align: right;
+    }
+    .numbers-right .numbers-title em {
+      font-style: italic; color: var(--red); font-weight: 900;
+    }
+    .numbers-right .numbers-desc {
+      font-size: 0.85rem; color: rgba(0,0,0,0.5); line-height: 1.6;
+      margin-bottom: 1rem; border-left: 3px solid rgba(0,0,0,0.15); padding-left: 1rem;
+    }
+    .numbers-right .numbers-desc strong { color: var(--charcoal); font-weight: 700; }
+    .numbers-right img {
+      width: 100%; border-radius: var(--radius);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+    .numbers-right .caption {
+      font-size: 0.7rem; color: rgba(0,0,0,0.35); margin-top: 0.5rem; font-style: italic;
+    }
+
+    /* PILLARS / CARDS */
+    .pillars-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+    .pillar-card {
+      background: white; border-radius: var(--radius);
+      box-shadow: var(--shadow); transition: var(--animation);
+      border: 1px solid rgba(0,0,0,0.08); position: relative; overflow: hidden;
+    }
+    .pillar-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .pillar-card .pillar-img {
+      width: 100%; height: 200px; object-fit: cover; object-position: center 30%; display: block;
+    }
+    .pillar-card .pillar-content { padding: 1.5rem; }
+    .pillar-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--dark); }
+    .pillar-card ul { list-style: none; }
+    .pillar-card li {
+      font-size: 0.85rem; color: var(--gray); padding: 0.3rem 0;
+      padding-left: 1.2rem; position: relative;
+    }
+    .pillar-card li::before {
+      content: '\25B8'; position: absolute; left: 0; color: var(--red); font-weight: bold;
+    }
+
+    /* MEMBERS GRID */
+    .members-intro { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+    .members-intro p { color: var(--gray); font-size: 0.95rem; }
+    .members-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+    }
+    .member-card {
+      background: white; border-radius: var(--radius); padding: 2rem 1.5rem;
+      text-align: center; box-shadow: var(--shadow); transition: var(--animation);
+      border: 1px solid rgba(0,0,0,0.08); display: flex; flex-direction: column;
+      align-items: center; justify-content: center; min-height: 180px;
+    }
+    .member-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .member-card img {
+      max-height: 60px; max-width: 140px; object-fit: contain; margin-bottom: 1rem;
+      filter: grayscale(30%); transition: var(--animation);
+    }
+    .member-card:hover img { filter: grayscale(0%); }
+    .member-card .name { font-size: 0.8rem; font-weight: 600; color: var(--dark); }
+    .member-cta {
+      margin-top: 3rem; text-align: center;
+      padding: 2rem; background: var(--warm-bg); border-radius: var(--radius);
+    }
+    .member-cta h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .member-cta p { font-size: 0.9rem; color: var(--gray); }
+    .member-cta a { color: var(--red); font-weight: 600; }
+
+    /* EVENTS TIMELINE */
+    .events-timeline { max-width: 1100px; margin: 0 auto; }
+    .event-category {
+      margin-bottom: 4rem;
+    }
+    .event-category-title {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      padding: 0.5rem 1.5rem; border-radius: 100px; font-size: 0.8rem;
+      font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2rem;
+    }
+    .cat-business { background: rgba(192,57,43,0.1); color: var(--red); }
+    .cat-tech { background: rgba(93,123,111,0.15); color: var(--sage); }
+    .cat-charity { background: rgba(212,136,30,0.15); color: var(--amber); }
+    .cat-culture { background: rgba(107,76,94,0.15); color: var(--plum); }
+
+    .event-card {
+      display: grid; grid-template-columns: 320px 1fr; gap: 0;
+      background: white; border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); margin-bottom: 1.5rem; transition: var(--animation);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .event-card:nth-child(odd) { direction: rtl; }
+    .event-card:nth-child(odd) > * { direction: ltr; }
+    .event-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .event-card.featured {
+      grid-template-columns: 420px 1fr;
+    }
+    .event-card img {
+      width: 100%; height: 100%; object-fit: cover; max-height: 200px;
+    }
+    .event-card.featured img { max-height: 240px; }
+    .event-info { padding: 1.25rem 1.5rem; }
+    .event-card.featured .event-info { padding: 1.5rem 2rem; }
+    .event-date {
+      font-size: 0.75rem; font-weight: 700; color: var(--red);
+      text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem;
+    }
+    .event-info h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+    .event-info p { font-size: 0.88rem; color: var(--gray); margin-bottom: 0.5rem; }
+    .event-impact {
+      font-size: 0.82rem; color: var(--sage); font-style: italic;
+      padding-left: 0.75rem; border-left: 2px solid var(--sage);
+    }
+
+    /* PRESS */
+    .press-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; }
+    .press-list { list-style: none; }
+    .press-item {
+      padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: var(--animation);
+    }
+    .press-item:hover { padding-left: 0.5rem; }
+    .press-item .outlet {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--red); margin-bottom: 0.2rem;
+    }
+    .press-item .headline { font-size: 0.9rem; font-weight: 600; color: var(--dark); margin-bottom: 0.2rem; }
+    .press-item .date { font-size: 0.75rem; color: var(--gray); }
+
+    .social-stats { }
+    .social-card {
+      background: white; border-radius: var(--radius-sm); padding: 1.5rem;
+      margin-bottom: 1rem; box-shadow: var(--shadow);
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .social-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; font-weight: 800; color: white;
+    }
+    .social-fb { background: #1877F2; }
+    .social-li { background: #0A66C2; }
+    .social-yt { background: #FF0000; }
+    .social-info .social-count { font-size: 1.5rem; font-weight: 800; color: var(--dark); }
+    .social-info .social-label { font-size: 0.75rem; color: var(--gray); }
+
+    /* WHO WE ARE */
+    .identity-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
+    }
+    .values-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .value-item {
+      background: white; border-radius: var(--radius); padding: 1.5rem 2rem;
+      box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.08);
+    }
+    .value-item h4 {
+      font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem;
+    }
+    .value-item p { font-size: 0.88rem; color: var(--gray); margin: 0; }
+    .operate-box {
+      margin-top: 1.5rem; padding: 1.5rem 2rem;
+      background: white; border-radius: var(--radius); box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .operate-box h4 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+    .operate-box p { font-size: 0.88rem; color: var(--gray); margin-bottom: 0.5rem; }
+    .anchoring-list { list-style: none; margin-top: 0.75rem; }
+    .anchoring-list li {
+      font-size: 0.85rem; color: var(--gray); padding: 0.3rem 0 0.3rem 1.2rem; position: relative;
+    }
+    .anchoring-list li::before {
+      content: '\2014'; position: absolute; left: 0; color: var(--red); font-weight: bold;
+    }
+    .mission-sidebar {
+      background: var(--red); color: white; border-radius: var(--radius);
+      padding: 2.5rem; position: sticky; top: 100px;
+    }
+    .mission-sidebar h3 {
+      font-size: 1.3rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.3;
+    }
+    .mission-sidebar h4 {
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; margin-bottom: 0.75rem; opacity: 0.8;
+    }
+    .mission-list { list-style: none; margin-bottom: 1.5rem; }
+    .mission-list li {
+      font-size: 0.88rem; padding: 0.3rem 0 0.3rem 1.2rem; position: relative; opacity: 0.9;
+    }
+    .mission-list li::before {
+      content: '\25B8'; position: absolute; left: 0; opacity: 0.7;
+    }
+    .mission-provides { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.5rem; }
+
+    /* WHO WE SERVE */
+    .serve-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+    .serve-card {
+      background: white; border-radius: var(--radius); padding: 2rem;
+      box-shadow: var(--shadow); transition: var(--animation);
+      border: 1px solid rgba(0,0,0,0.08); position: relative; overflow: hidden;
+    }
+    .serve-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .serve-card .num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--sage); color: white; font-weight: 800; font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .serve-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--dark); }
+    .serve-card ul { list-style: none; }
+    .serve-card li {
+      font-size: 0.85rem; color: var(--gray); padding: 0.3rem 0;
+      padding-left: 1.2rem; position: relative;
+    }
+    .serve-card li::before {
+      content: '\25B8'; position: absolute; left: 0; color: var(--sage); font-weight: bold;
+    }
+    .serve-closing {
+      margin-top: 3rem; text-align: center; padding: 2rem;
+      background: var(--warm-bg-alt); border-radius: var(--radius);
+      border: 1px solid var(--light-border);
+    }
+    .serve-closing p { font-size: 1rem; color: var(--gray); max-width: 800px; margin: 0 auto; }
+    .serve-closing strong { color: var(--dark); }
+
+    /* OUTLOOK CLOSING */
+    .outlook-closing {
+      margin-top: 3rem; padding: 2.5rem;
+      background: rgba(0,0,0,0.04); border-radius: var(--radius);
+      border: 1px solid rgba(0,0,0,0.08); text-align: center;
+    }
+    .outlook-closing h3 { font-size: 1.2rem; font-weight: 700; color: var(--charcoal); margin-bottom: 1rem; }
+    .outlook-closing p { font-size: 0.95rem; color: rgba(0,0,0,0.5); max-width: 800px; margin: 0 auto 0.75rem; }
+    .outlook-closing em { color: rgba(0,0,0,0.7); }
+
+    /* STRATEGIC OUTLOOK */
+    .outlook-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    }
+    .outlook-card {
+      background: rgba(255,255,255,0.5); border-radius: var(--radius);
+      padding: 2rem; border: 1px solid rgba(0,0,0,0.08);
+      transition: var(--animation);
+    }
+    .outlook-card:hover { background: rgba(255,255,255,0.8); transform: translateY(-3px); }
+    .outlook-card .num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 8px;
+      background: var(--red); color: white; font-weight: 800; font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .outlook-card h3 { font-size: 1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.75rem; }
+    .outlook-card ul { list-style: none; }
+    .outlook-card li {
+      font-size: 0.85rem; color: rgba(0,0,0,0.6); padding: 0.25rem 0;
+      padding-left: 1.2rem; position: relative;
+    }
+    .outlook-card li::before {
+      content: '\25B8'; position: absolute; left: 0; color: var(--red);
+    }
+
+    /* DIGITAL PRESENCE */
+    .digital-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .digital-card {
+      background: rgba(255,255,255,0.06); border-radius: var(--radius);
+      padding: 2rem; text-align: center; border: 1px solid rgba(255,255,255,0.08);
+    }
+    .digital-card .value { font-size: 2rem; font-weight: 900; color: var(--red-light); }
+    .digital-card .metric { font-weight: 600; color: white; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .digital-card .detail { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+    /* FOOTER */
+    .footer {
+      background: var(--dark); color: rgba(255,255,255,0.5);
+      padding: 3rem 2rem 1.5rem; text-align: center;
+    }
+    .footer-logo { margin-bottom: 0.5rem; }
+    .footer-logo img { height: 50px; width: auto; filter: brightness(0) invert(1); }
+    .footer p { font-size: 0.85rem; margin-bottom: 0.5rem; }
+    .footer a { color: var(--red-light); text-decoration: none; }
+    .footer .copy { font-size: 0.75rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); }
+
+    /* MOBILE NAV */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; background: var(--dark); margin: 4px 0; transition: var(--animation); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .numbers-layout { grid-template-columns: 1fr 2fr; gap: 2rem; }
+      .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+      .serve-grid { grid-template-columns: repeat(2, 1fr); }
+      .members-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .president { grid-template-columns: 1fr; gap: 2rem; }
+      .identity-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .mission-sidebar { position: static; }
+      .numbers-layout { grid-template-columns: 1fr; }
+      .numbers-left { grid-template-columns: 1fr 1fr; }
+      .numbers-right { position: static; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .serve-grid { grid-template-columns: 1fr; }
+      .members-grid { grid-template-columns: repeat(2, 1fr); }
+      .event-card { grid-template-columns: 1fr; }
+      .event-card img { max-height: 200px; }
+      .event-info { padding: 1.5rem !important; }
+      .press-grid { grid-template-columns: 1fr; }
+      .outlook-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; }
+      .section { padding: 4rem 1.5rem; }
+      .digital-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .members-grid { grid-template-columns: 1fr 1fr; }
+      .digital-grid { grid-template-columns: 1fr; }
+    }
+
+    /* SCROLL ANIMATIONS */
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .hero .fade-up { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><img src="media/romlux-logo.png" alt="RomLux"></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#whoweare">Who We Are</a>
+      <a href="#whatwedo">What We Do</a>
+      <a href="#numbers">Numbers</a>
+      <a href="#members">Members</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#press">Press</a>
+      <a href="#outlook">Outlook 2026</a>
+      <a href="https://www.romlux.org" class="nav-cta">romlux.org</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-title-block">
+      <h1>Annual Report<span class="year">2025</span></h1>
+    </div>
+    <div class="hero-image-wrap">
+      <img src="media/kirchberg-panorama.png" alt="Kirchberg, Luxembourg European Quarter">
+    </div>
+    <div class="hero-features">
+      <div class="hero-feature">
+        <div class="hero-feature-icon">
+          <img src="media/romlux-logo.png" alt="RomLux" style="height: 50px; width: auto;">
+        </div>
+        <div class="stat">200+</div>
+        <h3>RomLux Community</h3>
+        <p>Members Across Sectors</p>
+      </div>
+      <div class="hero-feature">
+        <div class="hero-feature-icon">
+          <svg viewBox="0 0 60 40" width="44" height="30">
+            <rect x="0" y="0" width="20" height="40" fill="#002B7F"/><rect x="20" y="0" width="20" height="40" fill="#FCD116"/><rect x="40" y="0" width="20" height="40" fill="#CE1126"/>
+            <rect x="0" y="0" width="60" height="40" rx="3" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          </svg>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <svg viewBox="0 0 60 40" width="44" height="30">
+            <rect x="0" y="0" width="60" height="13.3" fill="#EF3340"/><rect x="0" y="13.3" width="60" height="13.4" fill="white"/><rect x="0" y="26.7" width="60" height="13.3" fill="#00A1DE"/>
+            <rect x="0" y="0" width="60" height="40" rx="3" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="stat">160+</div>
+        <h3>Events Since 2007</h3>
+        <p>Bilateral Cooperation &amp; Partnerships</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESIDENT'S MESSAGE -->
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">President's Message</div>
+      <h2>Building Quietly, with Purpose</h2>
+    </div>
+    <div class="president">
+      <div class="president-about fade-up">
+        <h3>About RomLux</h3>
+        <p>Romania-Luxemburg Business Forum Asbl was founded in 2007 with a clear purpose: to build a lasting, credible bridge between the Romanian and Luxembourg business communities.</p>
+        <p>Starting as a small network of professionals and entrepreneurs, RomLux earned its standing through consistency and substance. Over 18 years, it has grown into the accredited Romanian Chamber of Commerce in Luxembourg, recognised by both Romanian and Luxembourg institutions.</p>
+        <p>Today, RomLux brings together over 200 members across sectors &mdash; finance, technology, law, consulting, and culture &mdash; united by a shared belief that bilateral cooperation, done well, creates real and durable value.</p>
+        <p>With more than 160 events organised since its establishment and a growing international footprint, RomLux continues to operate as a working platform: facilitating dialogue, enabling partnerships, and representing Romanian talent and enterprise with clarity and credibility.</p>
+      </div>
+      <div class="president-quote fade-up">
+        <blockquote>
+          Romania-Luxemburg Business Forum Asbl was created from a simple conviction: meaningful progress happens when trust, competence, and shared purpose meet. As the accredited Romanian Chamber of Commerce in the Grand Duchy of Luxembourg, our role is to serve as a reliable bridge between Romania and Luxembourg &mdash; connecting people, ideas, and initiatives that generate long-term value. RomLux is not just a network &mdash; it is a working platform. We act as enablers, supporting concrete projects that strengthen bilateral economic, cultural, scientific and professional ties.
+        </blockquote>
+        <div class="author">Razvan-Petru Radu</div>
+        <div class="title">President, Romania-Luxemburg Business Forum</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="section" id="whoweare">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Overview</div>
+      <h2>Who We Are</h2>
+      <p>At RomLux, we see our role as more than a connector between Romania and Luxembourg &mdash; we are a trusted partner for those who value integrity and sustainable growth.</p>
+    </div>
+    <div class="fade-up" style="margin-bottom: 3rem; text-align: center; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow);">
+      <img src="media/570ed549a68653807f23b4fe44030ee1a706c673.jpg" alt="Romanian Pavilion at NEXUS Luxembourg 2025" style="width: 100%; display: block; margin-top: -15%; object-fit: cover;">
+      <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.75rem; font-style: italic; padding: 0 0 0.5rem;">Romanian Pavilion &middot; NEXUS Luxembourg 2025</p>
+    </div>
+    <div class="identity-grid">
+      <div>
+        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;color:var(--dark);">Our Identity &amp; Values</h3>
+        <div class="values-list">
+          <div class="value-item fade-up">
+            <h4>Credibility</h4>
+            <p>We honour our commitments and build our reputation on substance and results.</p>
+          </div>
+          <div class="value-item fade-up">
+            <h4>Independence</h4>
+            <p>Our actions serve the interests of our members and the broader bilateral relationship, free from external pressures.</p>
+          </div>
+          <div class="value-item fade-up">
+            <h4>Continuity</h4>
+            <p>We cultivate long-term relationships, investing steadily so that our impact lasts.</p>
+          </div>
+        </div>
+        <div class="operate-box fade-up">
+          <h4>How We Operate</h4>
+          <p>RomLux is a non-profit association (A.s.b.l.) registered in Luxembourg, governed by its members and run primarily by volunteers committed to the bilateral cause. We do not conduct business on behalf of our members. We create the conditions in which business can happen.</p>
+          <h4 style="margin-top:1rem;">Institutional Anchoring</h4>
+          <ul class="anchoring-list">
+            <li>Accredited Romanian Chamber of Commerce in Luxembourg</li>
+            <li>Member of the Luxembourg Chamber of Commerce ecosystem</li>
+            <li>Cooperation with the Embassy of Romania in Luxembourg</li>
+            <li>Partner of Luxinnovation, LHoFT, Luxembourg Space Agency and others</li>
+            <li>Recognised by bilateral chambers across the EU</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mission-sidebar fade-up">
+        <h3>To strengthen the ties between Luxembourg and Romania.</h3>
+        <h4>We promote:</h4>
+        <ul class="mission-list">
+          <li>Economic and commercial cooperation</li>
+          <li>Scientific and technological exchange</li>
+          <li>Entrepreneurial and innovation-driven collaboration</li>
+          <li>Cultural dialogue and community cohesion</li>
+        </ul>
+        <div class="mission-provides">
+          <h4>RomLux provides:</h4>
+          <ul class="mission-list">
+            <li>Structure &amp; institutional credibility</li>
+            <li>Access to networks and ecosystems</li>
+            <li>Visibility and promotion</li>
+            <li>Market intelligence</li>
+            <li>Cross-border connectivity</li>
+          </ul>
+        </div>
+        <div style="font-size:0.8rem;opacity:0.7;margin-top:1rem;">Founded 2007 in Luxembourg<br>www.romlux.org</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="section section-alt" id="whatwedo">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Our Pillars</div>
+      <h2>What We Do</h2>
+      <p>RomLux operates as a bilateral business platform, connector and facilitator, delivering value through six complementary pillars of action.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card fade-up">
+        <img class="pillar-img" src="media/416fd2f988c3834e91928bee960f58b9c3ffdecb.png" alt="Networking event">
+        <div class="pillar-content">
+          <h3>Business Connectivity &amp; Matchmaking</h3>
+          <ul>
+            <li>Networking events, forums, roundtables and B2B meetings</li>
+            <li>Introductions to partners, providers and institutions</li>
+            <li>RomLux Connect &mdash; directory of Romanian-founded companies in Luxembourg</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pillar-card fade-up">
+        <img class="pillar-img" src="media/4b3c29ad05c45e271744d0e060a3bbedcdd8740c.png" alt="Romanian Pavilion at NEXUS">
+        <div class="pillar-content">
+          <h3>Market Access &amp; Internationalisation</h3>
+          <ul>
+            <li>Market briefings, country seminars and trade missions</li>
+            <li>Support for Romanian companies entering Luxembourg and the EU</li>
+            <li>National pavilions and curated delegations at major tech events</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pillar-card fade-up">
+        <img class="pillar-img" src="media/706bff1ac7818d6a58a6583e70e813a7f23a9b6c.png" alt="RomLux Knowledge Café">
+        <div class="pillar-content">
+          <h3>Knowledge Sharing &amp; Capacity Building</h3>
+          <ul>
+            <li>RomLux Knowledge Caf&eacute; and Romanian Connect</li>
+            <li>Entrepreneurs Network and sector working groups</li>
+            <li>Member-led sessions, speakers and peer learning formats</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pillar-card fade-up">
+        <img class="pillar-img" src="media/807170b650282f7a4aed3b70842031bb0847e229.png" alt="Institutional meetings">
+        <div class="pillar-content">
+          <h3>Institutional Liaison &amp; Advocacy</h3>
+          <ul>
+            <li>Cooperation with chambers, ministries and innovation agencies</li>
+            <li>Advocacy for bilateral initiatives &mdash; incl. Luxair LU&ndash;Bucharest line</li>
+            <li>High-level meetings between officials and business leaders</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pillar-card fade-up">
+        <img class="pillar-img" src="media/ed65acf5fc9719115293e3d7c1833127daf70910.png" alt="NEXUS Warm-Up Event">
+        <div class="pillar-content">
+          <h3>Visibility, Promotion &amp; Nation Branding</h3>
+          <ul>
+            <li>Romanian pavilions at Nexus, Luxembourg Internet Days, ARCH Summit</li>
+            <li>Promoting Romanian startups and scale-ups in Luxembourg</li>
+            <li>Media exposure, digital presence and market intelligence content</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pillar-card fade-up">
+        <img class="pillar-img" src="media/1efbfd6cf64ccec8ec84d26f482f26b14d186bb5.png" alt="Sing 4 Bazar charity concert">
+        <div class="pillar-content">
+          <h3>Cultural &amp; Charitable Engagement</h3>
+          <ul>
+            <li>Romanian Stand at Bazar International since 2007</li>
+            <li>Charity concerts, cultural exhibitions and artistic events</li>
+            <li>&euro;17,800 raised for charity in 2025 &mdash; record contribution</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="section" id="whoweserve">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Our Stakeholders</div>
+      <h2>Who We Serve</h2>
+      <p>RomLux serves a diverse, cross-border and multi-sector community of stakeholders involved in Luxembourg&ndash;Romania relations.</p>
+    </div>
+    <div class="serve-grid">
+      <div class="serve-card fade-up">
+
+        <h3>Luxembourg-based Companies &amp; Entrepreneurs</h3>
+        <ul>
+          <li>Companies exploring Romania for investment, near-shoring or outsourcing</li>
+          <li>Sectors: IT, fintech, cybersecurity, space, logistics, manufacturing, energy</li>
+          <li>Benefits: market intelligence, institutional access, matchmaking</li>
+        </ul>
+      </div>
+      <div class="serve-card fade-up">
+
+        <h3>Romanian Companies, Founders &amp; Startups</h3>
+        <ul>
+          <li>Romanian businesses entering Luxembourg and the wider EU market</li>
+          <li>Access to investors, accelerators and innovation agencies</li>
+          <li>Participation in Nexus2050, ICT Spring, ARCH Summit and more</li>
+        </ul>
+      </div>
+      <div class="serve-card fade-up">
+
+        <h3>Professionals, Experts &amp; Business Services</h3>
+        <ul>
+          <li>Lawyers, consultants, bankers, accountants, engineers, IT professionals</li>
+          <li>Experts seeking visibility, partnerships and speaking opportunities</li>
+          <li>Service providers supporting cross-border operations</li>
+        </ul>
+      </div>
+      <div class="serve-card fade-up">
+
+        <h3>Investors, Funds &amp; Innovation Actors</h3>
+        <ul>
+          <li>Venture capital and private equity actors</li>
+          <li>Innovation hubs, accelerators and research organisations</li>
+          <li>Partners: Luxinnovation, LHoFT, ESRIC, LIST, SnT, Luxembourg Space Agency</li>
+        </ul>
+      </div>
+      <div class="serve-card fade-up">
+
+        <h3>Institutions &amp; Partner Organisations</h3>
+        <ul>
+          <li>Luxembourg Chamber of Commerce, embassies and ministries</li>
+          <li>Accredited bilateral chambers and economic development agencies</li>
+          <li>Cultural and educational organisations</li>
+        </ul>
+      </div>
+      <div class="serve-card fade-up">
+
+        <h3>The Wider Community</h3>
+        <ul>
+          <li>The Romanian community in Luxembourg</li>
+          <li>Cultural actors, artists and charitable initiatives</li>
+          <li>Bazar International, cultural events and educational programmes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="serve-closing fade-up">
+      <p><strong>RomLux is more than a chamber of commerce.</strong> It is a trusted bilateral platform, ecosystem connector and long-term partner for all stakeholders engaged in Luxembourg&ndash;Romania cooperation &mdash; combining business connectivity, institutional dialogue, innovation promotion, cultural diplomacy and community engagement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- KEY NUMBERS -->
+<section class="section" id="numbers" style="background: #f3ece2; color: var(--charcoal); padding: 3rem 0;">
+  <div class="container">
+    <div class="numbers-layout fade-up">
+      <div class="numbers-left">
+        <div class="numbers-group-label">Members</div>
+        <div class="number-row accent-blue">
+          <div class="row-icon"><i class="fa-solid fa-users"></i></div>
+          <div class="value">190</div>
+          <div class="metric">member companies</div>
+        </div>
+        <div class="number-row accent-teal">
+          <div class="row-icon"><i class="fa-solid fa-user-plus"></i></div>
+          <div class="value">48</div>
+          <div class="metric">new members in 2025</div>
+        </div>
+
+        <div class="numbers-group-label">Key Indicators</div>
+        <div class="number-row accent-green">
+          <div class="row-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <div class="value">160</div>
+          <div class="metric">events since founding</div>
+        </div>
+        <div class="number-row accent-gold">
+          <div class="row-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <div class="value">4</div>
+          <div class="metric">event categories</div>
+        </div>
+        <div class="number-row accent-green">
+          <div class="row-icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="value">18</div>
+          <div class="metric">years of activity</div>
+        </div>
+        <div class="number-row accent-gold">
+          <div class="row-icon"><i class="fa-solid fa-flag"></i></div>
+          <div class="value">2007</div>
+          <div class="metric">year founded</div>
+        </div>
+
+        <div class="numbers-group-label">Digital Presence</div>
+        <div class="number-row accent-blue">
+          <div class="row-icon"><i class="fa-brands fa-facebook"></i></div>
+          <div class="value">1.3k</div>
+          <div class="metric">Facebook followers</div>
+        </div>
+        <div class="number-row accent-blue">
+          <div class="row-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+          <div class="value">60</div>
+          <div class="metric">FB posts in 2025</div>
+        </div>
+        <div class="number-row accent-gold">
+          <div class="row-icon"><i class="fa-brands fa-linkedin"></i></div>
+          <div class="value">2k</div>
+          <div class="metric">LinkedIn followers</div>
+        </div>
+        <div class="number-row accent-gold">
+          <div class="row-icon"><i class="fa-solid fa-share-nodes"></i></div>
+          <div class="value">120</div>
+          <div class="metric">LinkedIn posts &rsquo;25</div>
+        </div>
+        <div class="number-row accent-coral">
+          <div class="row-icon"><i class="fa-brands fa-youtube"></i></div>
+          <div class="value">86</div>
+          <div class="metric">YouTube subscribers</div>
+        </div>
+        <div class="number-row accent-coral">
+          <div class="row-icon"><i class="fa-solid fa-video"></i></div>
+          <div class="value">32</div>
+          <div class="metric">videos on YouTube</div>
+        </div>
+
+        <div class="numbers-group-label">Impact</div>
+        <div class="number-row accent-coral">
+          <div class="row-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+          <div class="value">&euro;17.8k</div>
+          <div class="metric">donated to charity</div>
+        </div>
+        <div class="number-row accent-coral">
+          <div class="row-icon"><i class="fa-solid fa-newspaper"></i></div>
+          <div class="value">14</div>
+          <div class="metric">media features &rsquo;25</div>
+        </div>
+
+        <div class="numbers-footer">
+          Accredited Romanian Chamber of Commerce in Luxembourg &middot; www.romlux.org &middot; Founded 2007
+        </div>
+      </div>
+      <div class="numbers-right">
+        <div class="numbers-title">Romania<br>&amp; Luxembourg<br><em>in Numbers</em></div>
+        <p class="numbers-desc">Founded in 2007, RomLux has grown into the leading bilateral platform connecting Luxembourg and Romania across business, innovation, culture and community &mdash; reaching its <strong>18th year of activity</strong> in 2025.</p>
+        <img src="media/kirchberg-panorama.png" alt="Kirchberg, Luxembourg European Quarter">
+        <div class="caption">Kirchberg, Luxembourg City &middot; European Quarter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORPORATE MEMBERS -->
+<section class="section" id="members">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Our Network</div>
+      <h2>Corporate Members</h2>
+      <p>Companies and organisations that have chosen to deepen their engagement with RomLux through enhanced partnership.</p>
+    </div>
+    <div class="members-grid">
+      <div class="member-card fade-up">
+        <img src="media/arobs.png" alt="AROBS">
+        <div class="name">AROBS Transilvania Software SA</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/fiduciaire-lpg.png" alt="Fiduciaire LPG" style="background:#2D3436;padding:8px;border-radius:8px;">
+        <div class="name">Fiduciaire LPG</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/hatwit.jpg" alt="Hatwit International">
+        <div class="name">Hatwit International</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/newakord.png" alt="New Akord">
+        <div class="name">NEW AKORD SECURITY SRL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/microgrup.png" alt="Micro Grup">
+        <div class="name">MICRO GRUP BUSINESS SOLUTION SRL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/rmt-labs.png" alt="RMT Labs">
+        <div class="name">RMT Labs S.A.</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/ebs-integrator.png" alt="EBS Integrator">
+        <div class="name">EBS Integrator Sarl</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/mediahuis.png" alt="Mediahuis">
+        <div class="name">MEDIAHUIS Luxembourg S.A.</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/agora-robotics.png" alt="Agora Robotics">
+        <div class="name">Agora Robotics SRL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/blackbullet.png" alt="Black Bullet">
+        <div class="name">Black Bullet Cybersecurity Solutions</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/roca.png" alt="Roca Management">
+        <div class="name">Roca Management SRL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/soft-tehnica.png" alt="Soft Tehnica">
+        <div class="name">Soft Tehnica Romania</div>
+      </div>
+    </div>
+    <div class="member-cta fade-up">
+      <h3>Become a Corporate Member</h3>
+      <p>Elevate your company's visibility within the Luxembourg&ndash;Romania business community. Enhanced listing on <a href="https://connect.romlux.org/">RomLux Connect</a>, priority event invitations, co-branding opportunities and direct access to a trusted bilateral network.</p>
+      <p style="margin-top:0.5rem;"><a href="mailto:info@romlux.org">info@romlux.org</a> &middot; <a href="https://www.romlux.org">www.romlux.org</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="section section-alt" id="highlights">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Highlights 2025</div>
+      <h2>Key Events &amp; Activities</h2>
+    </div>
+    <div class="events-timeline">
+
+      <!-- BUSINESS -->
+      <div class="event-category">
+        <div class="event-category-title cat-business fade-up">Business &amp; Networking</div>
+
+        <div class="event-card fade-up">
+          <img src="media/2aa0385fc533eee35a780acc8db91cd238f1f29f.png" alt="New Year Meeting">
+          <div class="event-info">
+            <div class="event-date">31 January 2025</div>
+            <h3>Annual Members New Year Meeting</h3>
+            <p>Opened the New Year with energy, warmth and shared purpose. 65 members gathered with H.E. Livia Rusu (Romanian Ambassador), the Chair of the Polish Chamber and the COO of LPEA.</p>
+            <div class="event-impact">Reinforced community bonds and launched the 2025 programme with enthusiasm and renewed engagement.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/37606c290c83b9c958b89ea47685ae4cd8b5d429.png" alt="General Assembly">
+          <div class="event-info">
+            <div class="event-date">3 April 2025</div>
+            <h3>Annual General Assembly &amp; High-Level Conference</h3>
+            <p>Conducted the statutory General Assembly at the Luxembourg Chamber of Commerce. Featured Prof. Vlad Alexandrescu on reform in education, culture and public administration.</p>
+            <div class="event-impact">Strengthened institutional ties and gave members insight into policy developments relevant to bilateral cooperation.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/416fd2f988c3834e91928bee960f58b9c3ffdecb.png" alt="Legal Connect">
+          <div class="event-info">
+            <div class="event-date">14 May 2025</div>
+            <h3>RomLux Legal Connect</h3>
+            <p>Created a sector-focused networking platform for legal professionals. Lawyers, legal advisors and compliance professionals gathered for focused exchange.</p>
+            <div class="event-impact">Facilitated dialogue on cross-border legal and regulatory matters and broadened the professional network.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/4b3c29ad05c45e271744d0e060a3bbedcdd8740c.png" alt="115 Years Diplomacy">
+          <div class="event-info">
+            <div class="event-date">10 June 2025</div>
+            <h3>115 Years of Diplomatic Relationships</h3>
+            <p>Celebrating 115 years of diplomatic relations between Romania and Luxembourg on the occasion of the National Day of Luxembourg.</p>
+            <div class="event-impact">Leaders, diplomats and the business community gathered alongside the outgoing Ambassador of Luxembourg to Romania to reflect on the strong partnership.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/51f83b903e43f23300d323ba133b319807917417.png" alt="BEROCC Mission">
+          <div class="event-info">
+            <div class="event-date">28&ndash;30 October 2025</div>
+            <h3>BEROCC &ndash; RomLux Trade Mission to Luxembourg</h3>
+            <p>Co-organised with BEROCC, bringing business leaders from Belgium, Luxembourg, Romania and Moldova to explore high-tech partnerships in AI, cybersecurity and smart manufacturing.</p>
+            <div class="event-impact">Fostered strategic alliances and positioned Romania as a mature player in the European innovation ecosystem.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/52b9c71fa292995c0cdfd0e13dffa9584cdef4f4.png" alt="Financing Conference">
+          <div class="event-info">
+            <div class="event-date">25 September 2025</div>
+            <h3>"Financing Companies" Conference &ndash; Romanian Banking Institute</h3>
+            <p>RomLux participated as institutional partner, represented among speakers by Board Member Marius Cara, alongside the Council of ESG Employers and NAI Romania.</p>
+            <div class="event-impact">Reinforced institutional presence in Romania and commitment to cross-border access to finance.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI & TECH -->
+      <div class="event-category">
+        <div class="event-category-title cat-tech fade-up">AI &amp; Technology</div>
+
+        <div class="event-card fade-up">
+          <img src="media/570ed549a68653807f23b4fe44030ee1a706c673.jpg" alt="Nexus Romanian Pavilion">
+          <div class="event-info">
+            <div class="event-date">17&ndash;18 June 2025</div>
+            <h3>Romanian Pavilion @ Nexus Luxembourg 2025</h3>
+            <p>RomLux curated the Romanian Pavilion with 10+ companies in AI, cybersecurity, robotics and digital transformation &mdash; building new European partnerships. Direct engagement with investors and corporates.</p>
+            <div class="event-impact">Coordinated visibility, facilitated relevant connections with decision-makers and institutional partners within the ecosystem.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/5978801a1e632eea4434df4eb1583d33e87f2660.png" alt="AI at SnT">
+          <div class="event-info">
+            <div class="event-date">20 May 2025</div>
+            <h3>AI for Competitive Advantage &ndash; Cross-Border Impact on SMEs @ SnT</h3>
+            <p>Special RomLux Connect edition at SnT &ndash; University of Luxembourg: keynotes, panel with industry leaders, a live AI automation demo and dynamic networking.</p>
+            <div class="event-impact">Entrepreneurs gained practical insights into digital transformation.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/6c04395fb127a9b92062487024c09a6bc87ccaec.png" alt="Nexus Roadshows">
+          <div class="event-info">
+            <div class="event-date">9&ndash;10 April 2025</div>
+            <h3>Nexus Roadshows to Bucharest and Cluj</h3>
+            <p>Romanian tech companies explored global expansion opportunities during the RomLux European Roadshow ahead of Nexus Luxembourg 2025.</p>
+            <div class="event-impact">Entrepreneurs discovered how the event can open doors to new markets, partnerships and funding opportunities across Europe.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/1efbfd6cf64ccec8ec84d26f482f26b14d186bb5.png" alt="Warm-Up for Nexus">
+          <div class="event-info">
+            <div class="event-date">16 June 2025</div>
+            <h3>Warm-Up for Nexus &ndash; Pre-Event Networking @ LHoFT Luxembourg</h3>
+            <p>Exclusive pre-Nexus evening at LHoFT Luxembourg, bringing Romanian tech founders into the heart of the Luxembourg innovation ecosystem.</p>
+            <div class="event-impact">Sparked early-stage connections that maximised Romanian participation at Nexus.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/7401d81370e2b8766a4c31aa8af3f3bbc70738c0.png" alt="Knowledge Cafe">
+          <div class="event-info">
+            <div class="event-date">18 September 2025</div>
+            <h3>Knowledge Caf&eacute;: Mastering AI in the Workplace</h3>
+            <p>Hands-on workshop covering AI agents, chatbots, Microsoft Copilot and prompt engineering. Speakers from EU institutions, tech consultancies and startups.</p>
+            <div class="event-impact">Reaffirmed commitment to practical innovation and digital skills development.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARITY -->
+      <div class="event-category">
+        <div class="event-category-title cat-charity fade-up">Charity &amp; Community</div>
+
+        <div class="event-card fade-up">
+          <img src="media/807170b650282f7a4aed3b70842031bb0847e229.png" alt="Polo Cup">
+          <div class="event-info">
+            <div class="event-date">28&ndash;29 June 2025</div>
+            <h3>International Roude L&euml;iw Polo Cup &ndash; 7th Edition</h3>
+            <p>RomLux sponsored the 7th edition, offering members VIP access and gala dinner hospitality alongside polo teams and business leaders.</p>
+            <div class="event-impact">Enhanced brand visibility and enabled meaningful connections.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/e1a557d88429ad7be62d04d9d46824bf9389b166.png" alt="Expat Day">
+          <div class="event-info">
+            <div class="event-date">7 September 2025</div>
+            <h3>Luxembourg Expat Day &ndash; RomLux Presence</h3>
+            <p>RomLux engaged professionals and entrepreneurs alongside AmCham Luxembourg, BRCC and Luxembourg Times at this annual international showcase.</p>
+            <div class="event-impact">Extended outreach and reinforced presence in Luxembourg's multicultural business environment.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/9e3412f3f4d565cdf1387ad2589e20f0d5af6b8f.png" alt="Race 4 Bazar">
+          <div class="event-info">
+            <div class="event-date">21 September 2025</div>
+            <h3>Race 4 Bazar &ndash; Speed, Fun and Charity on Track</h3>
+            <p>Second charity karting race of the year, bringing together participants from the RomLux and Luxembourg business communities.</p>
+            <div class="event-impact">Extended the charitable programme and reinforced the spirit of community generosity.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/c5c071bbd9f3fd83add0309c4c42f7d60949e43c.png" alt="Sing 4 Bazar">
+          <div class="event-info">
+            <div class="event-date">29 October 2025</div>
+            <h3>Sing 4 Bazar &ndash; Charity Recital &amp; Dinner</h3>
+            <p>Refined recital by three outstanding artists followed by a gala dinner. Partners: Tero, Pianos Kelly, Hatwit, Luxembourg Times, B17 Luxembourg.</p>
+            <div class="event-impact">All proceeds dedicated to Bazar International. An expression of cultural diplomacy and solidarity.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/ed65acf5fc9719115293e3d7c1833127daf70910.png" alt="Bazar International">
+          <div class="event-info">
+            <div class="event-date">21&ndash;23 November 2025 &middot; Flagship Event</div>
+            <h3>Romania Stand @ Bazar International de Luxembourg 2025</h3>
+            <p>The RomLux stand welcomed thousands of visitors alongside 50+ nationalities, in the presence of H.R.H. Grand Duchess Stephanie. Authentic food, crafts, music and the iconic Dacia 1310.</p>
+            <div class="event-impact">Record donation of EUR 17,800 for solar panels for children's homes in Harja (Bac&#259;u). National and international media coverage.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CULTURE -->
+      <div class="event-category">
+        <div class="event-category-title cat-culture fade-up">Culture &amp; Diplomacy</div>
+
+        <div class="event-card fade-up">
+          <img src="media/706bff1ac7818d6a58a6583e70e813a7f23a9b6c.png" alt="Botarro">
+          <div class="event-info">
+            <div class="event-date">12 February 2025</div>
+            <h3>BOTARRO &ndash; Retrospective Exhibition, Luxembourg</h3>
+            <p>Vernissage of the retrospective of Remus Botarro &mdash; poet, painter and sculptor. Surreal, Dali-like works rooted in dreams and cosmic connection across six decades.</p>
+            <div class="event-impact">Offered a refined cultural experience and raised the profile of Romanian art in the Luxembourg arts community.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/image18.jpg" alt="Luxembourgers in Romania">
+          <div class="event-info">
+            <div class="event-date">11 March 2025</div>
+            <h3>History of Luxembourgers in Romania &ndash; Exhibition, Dudelange</h3>
+            <p>Exhibition by historian Philippe Henri Blasen documenting Luxembourgish contributions to Romanian infrastructure.</p>
+            <div class="event-impact">Deepened bilateral historical awareness and enriched cultural diplomacy between the two countries.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/image19.jpg" alt="Brancusi Steichen">
+          <div class="event-info">
+            <div class="event-date">10 June 2025</div>
+            <h3>Br&acirc;ncu&#537;i &amp; Steichen &ndash; Crossed Pathways</h3>
+            <p>Celebrated the artistic dialogue between Constantin Br&acirc;ncu&#537;i and Edward Steichen. RomLux supported the cultural event exploring creative intersections.</p>
+            <div class="event-impact">Promoted Romanian cultural heritage and strengthened cultural diplomacy between Luxembourg and Romania.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/fa6ee40192969189a5586f3f55efb1c45895404c.png" alt="Book Launch">
+          <div class="event-info">
+            <div class="event-date">26 September 2025</div>
+            <h3>Book Launch: Cocktail of Creativity by Larisa Popescu</h3>
+            <p>Launch with a conference on creativity and well-being, co-organised with Lume Bun&#259; and funded by the Romanian Department for Romanians Abroad.</p>
+            <div class="event-impact">Strengthened community cohesion and engaged the younger generation of Romanians in Luxembourg with their cultural heritage.</div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <img src="media/image3.jpg" alt="Bazar Mini-Event">
+          <div class="event-info">
+            <div class="event-date">16&ndash;17 May 2025</div>
+            <h3>Bazar International Spring Mini-Event &ndash; City Concorde, Bertrange</h3>
+            <p>Two-day event with curated stands from 17 countries including Romania. 100% of proceeds to charitable organisations supporting emergency aid, education and health.</p>
+            <div class="event-impact">Maintained long-standing Bazar engagement and showcased Romanian culture and craftsmanship to a broad audience.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRESS & MEDIA -->
+<section class="section" id="press">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Press &amp; Media</div>
+      <h2>In the Spotlight</h2>
+      <p>In 2025, RomLux and the Romanian Pavilion at Nexus Luxembourg received 14 media features across Luxembourg, Romanian and international outlets.</p>
+    </div>
+    <div class="press-grid">
+      <div class="fade-up">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;">Media Coverage &ndash; Romanian Pavilion @ Nexus 2025</h3>
+        <ul class="press-list">
+          <li class="press-item">
+            <div class="outlet">Silicon Luxembourg</div>
+            <div class="headline">What Luxembourg Can Learn From The Romanian Startup Ecosystem</div>
+            <div class="date">14 June 2025</div>
+          </li>
+          <li class="press-item">
+            <div class="outlet">AmCham</div>
+            <div class="headline">Romanian Innovation on Display at Nexus on June 17&ndash;18</div>
+            <div class="date">11 June 2025</div>
+          </li>
+          <li class="press-item">
+            <div class="outlet">Techsense</div>
+            <div class="headline">Ten Romanian Companies Showcase Cutting-Edge Tech at Nexus 2025</div>
+            <div class="date">13 June 2025</div>
+          </li>
+          <li class="press-item">
+            <div class="outlet">Techsense</div>
+            <div class="headline">Romanian Innovation on Display at Nexus: AI, Digital Security, Robotics and More</div>
+            <div class="date">12 June 2025</div>
+          </li>
+          <li class="press-item">
+            <div class="outlet">Digitalio</div>
+            <div class="headline">Inova&#539;ia rom&acirc;neasc&#259; a atras toate privirile la Nexus Luxemburg 2025</div>
+            <div class="date">2 July 2025</div>
+          </li>
+          <li class="press-item">
+            <div class="outlet">Cluj.info</div>
+            <div class="headline">De la Cluj spre Europa: Companiile tech rom&acirc;ne&#537;ti, invitate la Nexus Luxembourg 2025</div>
+            <div class="date">15 April 2025</div>
+          </li>
+          <li class="press-item">
+            <div class="outlet">RomLux</div>
+            <div class="headline">Expertise and High-Tech Made in Romania &ndash; Nexus Luxembourg 2025</div>
+            <div class="date">10 June 2025</div>
+          </li>
+          <li class="press-item">
+            <div class="outlet">Techsense</div>
+            <div class="headline">New Akord Security at Nexus Luxembourg 2025</div>
+            <div class="date">17 June 2025</div>
+          </li>
+          <li class="press-item">
+            <div class="outlet">Techsense</div>
+            <div class="headline">Euro Testing Software Solutions, Newcomer to Nexus Luxembourg 2025</div>
+            <div class="date">18 June 2025</div>
+          </li>
+          <li class="press-item">
+            <div class="outlet">Techsense</div>
+            <div class="headline">Tech is Reshaping Every Industry &ndash; Do You Have the Leadership to Keep Up?</div>
+            <div class="date">15 June 2025</div>
+          </li>
+          <li class="press-item">
+            <div class="outlet">Techsense</div>
+            <div class="headline">Agora Robotics at Nexus</div>
+            <div class="date">17 June 2025</div>
+          </li>
+          <li class="press-item">
+            <div class="outlet">Techsense</div>
+            <div class="headline">AROBS Returns to Nexus Luxembourg 2025 &ndash; Expertise and High-Tech Made in Romania</div>
+            <div class="date">16 June 2025</div>
+          </li>
+          <li class="press-item">
+            <div class="outlet">Chronicle</div>
+            <div class="headline">RomLux Launches Networking Event Featuring Romanian Tech &amp; Local Business</div>
+            <div class="date">5 June 2025</div>
+          </li>
+        </ul>
+      </div>
+      <div class="social-stats fade-up">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;">Social Media Reach</h3>
+        <div class="social-card">
+          <div class="social-icon social-fb">f</div>
+          <div class="social-info">
+            <div class="social-count">1,300+</div>
+            <div class="social-label">Facebook followers &middot; 60 posts in 2025</div>
+          </div>
+        </div>
+        <div class="social-card">
+          <div class="social-icon social-li">in</div>
+          <div class="social-info">
+            <div class="social-count">2,000+</div>
+            <div class="social-label">LinkedIn followers &middot; 120+ posts in 2025</div>
+          </div>
+        </div>
+        <div class="social-card">
+          <div class="social-icon social-yt">&#9654;</div>
+          <div class="social-info">
+            <div class="social-count">86</div>
+            <div class="social-label">YouTube subscribers &middot; 32 videos published</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGIC OUTLOOK -->
+<section class="section" id="outlook" style="background: #f3ece2; color: var(--charcoal);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Looking Ahead</div>
+      <h2>Strategic Outlook 2026</h2>
+      <p>As RomLux approaches its twentieth year of activity, the association enters a new phase of maturity, consolidation and strategic ambition.</p>
+    </div>
+    <div class="outlook-grid">
+      <div class="outlook-card fade-up">
+
+        <h3>Deepening Bilateral Economic Cooperation</h3>
+        <ul>
+          <li>Targeted business delegations and sector missions</li>
+          <li>Structured B2B matchmaking formats</li>
+          <li>Focus: IT, cybersecurity, fintech, space, logistics, energy</li>
+        </ul>
+      </div>
+      <div class="outlook-card fade-up">
+
+        <h3>Strengthening Romania's Innovation Position</h3>
+        <ul>
+          <li>National pavilions at Nexus2050, ICT Spring, ARCH Summit</li>
+          <li>Introductions to Luxembourg investors and accelerators</li>
+          <li>Promoting Romania as a competitive EU innovation partner</li>
+        </ul>
+      </div>
+      <div class="outlook-card fade-up">
+
+        <h3>Expanding Knowledge Sharing</h3>
+        <ul>
+          <li>Country seminars with Luxembourg Chamber of Commerce</li>
+          <li>Expanding Knowledge Caf&eacute; and Entrepreneurs Network</li>
+          <li>Thematic working groups on priority sectors</li>
+        </ul>
+      </div>
+      <div class="outlook-card fade-up">
+
+        <h3>Scaling RomLux Connect Platform</h3>
+        <ul>
+          <li>Expanding registered companies on connect.romlux.org</li>
+          <li>Increasing visibility in business communities</li>
+          <li>Integrating into events, delegations and business missions</li>
+        </ul>
+      </div>
+      <div class="outlook-card fade-up">
+
+        <h3>Enhancing Institutional Cooperation &amp; Advocacy</h3>
+        <ul>
+          <li>Structured business exchanges with Luxembourg Chamber of Commerce</li>
+          <li>Strengthening cooperation with embassies and bilateral chambers</li>
+          <li>Promoting connectivity projects &mdash; building on Luxair LU&ndash;Bucharest flight</li>
+        </ul>
+      </div>
+      <div class="outlook-card fade-up">
+
+        <h3>Sustaining Cultural Diplomacy &amp; Charitable Engagement</h3>
+        <ul>
+          <li>Romanian stand at Bazar International de Luxembourg</li>
+          <li>Charity concerts, Race for a Cause karting and fundraising initiatives</li>
+          <li>Cultural exhibitions, theatre performances and concerts promoting Romanian heritage</li>
+        </ul>
+      </div>
+      <div class="outlook-card fade-up">
+
+        <h3>Growing &amp; Engaging the RomLux Community</h3>
+        <ul>
+          <li>Attracting new corporate and individual members</li>
+          <li>Increasing peer interaction, collaboration and cross-sector dialogue</li>
+          <li>Remaining member-driven, guided by inclusiveness and long-term relationship building</li>
+        </ul>
+      </div>
+    </div>
+    <div class="outlook-closing fade-up">
+      <h3>RomLux enters 2026 with a solid foundation</h3>
+      <p>In a European context marked by economic transformation, technological acceleration and geopolitical uncertainty, the need for trusted bilateral platforms has never been greater.</p>
+      <p>By combining business connectivity, innovation promotion, institutional dialogue, cultural diplomacy and community engagement, RomLux will continue to serve as a key facilitator of Luxembourg&ndash;Romania cooperation and a long-term partner for its members and stakeholders.</p>
+      <p><em>The association remains committed to building bridges, creating opportunities and strengthening Europe through meaningful bilateral action.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo"><img src="media/romlux-logo.png" alt="RomLux"></div>
+    <p>Romania-Luxemburg Business Forum Asbl &middot; Founded 2007 in Luxembourg</p>
+    <p><a href="https://www.romlux.org">www.romlux.org</a> &middot; <a href="mailto:info@romlux.org">info@romlux.org</a></p>
+    <p class="copy">&copy; 2025 Romania-Luxemburg Business Forum. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+// Scroll animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Nav scroll effect
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('.nav');
+  const scrolled = window.scrollY;
+  if (scrolled > 100) {
+    nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+  lastScroll = scrolled;
+});
+</script>
+
+</body>
+</html>
