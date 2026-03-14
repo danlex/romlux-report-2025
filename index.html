@@ -428,6 +428,11 @@
       background: var(--sage); color: white; font-weight: 800; font-size: 0.85rem;
       margin-bottom: 1rem;
     }
+    .serve-card .serve-icon {
+      width: 44px; height: 44px; border-radius: 12px; background: var(--sage);
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem; font-size: 1.2rem; color: white;
+    }
     .serve-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--dark); }
     .serve-card ul { list-style: none; }
     .serve-card li {
@@ -594,33 +599,7 @@
       </div>
       <div class="hero-feature">
         <div class="hero-feature-icon">
-          <svg viewBox="0 0 120 80" width="110" height="70">
-            <!-- Poles crossed -->
-            <line x1="20" y1="75" x2="58" y2="5" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="100" y1="75" x2="62" y2="5" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
-            <!-- Pole rings -->
-            <circle cx="60" cy="8" r="3.5" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
-            <!-- Romania flag (left, tilted) -->
-            <g transform="translate(22,12) rotate(-12, 0, 0)">
-              <rect x="0" y="0" width="12" height="36" fill="#002B7F" rx="1"/>
-              <rect x="12" y="0" width="12" height="36" fill="#FCD116"/>
-              <rect x="24" y="0" width="12" height="36" fill="#CE1126" rx="1"/>
-              <rect x="0" y="0" width="36" height="36" rx="2" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
-              <!-- Wave effect -->
-              <path d="M0,8 Q9,5 18,9 Q27,13 36,8" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
-              <path d="M0,20 Q9,17 18,21 Q27,25 36,20" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
-            </g>
-            <!-- Luxembourg flag (right, tilted) -->
-            <g transform="translate(62,12) rotate(12, 36, 0)">
-              <rect x="0" y="0" width="36" height="12" fill="#EF3340" rx="1"/>
-              <rect x="0" y="12" width="36" height="12" fill="white"/>
-              <rect x="0" y="24" width="36" height="12" fill="#00A1DE" rx="1"/>
-              <rect x="0" y="0" width="36" height="36" rx="2" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
-              <!-- Wave effect -->
-              <path d="M0,8 Q9,5 18,9 Q27,13 36,8" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-              <path d="M0,20 Q9,17 18,21 Q27,25 36,20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-            </g>
-          </svg>
+          <img src="media/flags-ro-lu.png" alt="Romania & Luxembourg flags" style="height: 60px; width: auto;">
         </div>
         <div class="stat">160+</div>
         <h3>Events Since 2007</h3>
@@ -812,7 +791,7 @@
     </div>
     <div class="serve-grid">
       <div class="serve-card fade-up">
-
+        <div class="serve-icon"><i class="fa-solid fa-building"></i></div>
         <h3>Luxembourg-based Companies &amp; Entrepreneurs</h3>
         <ul>
           <li>Companies exploring Romania for investment, near-shoring or outsourcing</li>
@@ -821,7 +800,7 @@
         </ul>
       </div>
       <div class="serve-card fade-up">
-
+        <div class="serve-icon"><i class="fa-solid fa-rocket"></i></div>
         <h3>Romanian Companies, Founders &amp; Startups</h3>
         <ul>
           <li>Romanian businesses entering Luxembourg and the wider EU market</li>
@@ -830,7 +809,7 @@
         </ul>
       </div>
       <div class="serve-card fade-up">
-
+        <div class="serve-icon"><i class="fa-solid fa-briefcase"></i></div>
         <h3>Professionals, Experts &amp; Business Services</h3>
         <ul>
           <li>Lawyers, consultants, bankers, accountants, engineers, IT professionals</li>
@@ -839,7 +818,7 @@
         </ul>
       </div>
       <div class="serve-card fade-up">
-
+        <div class="serve-icon"><i class="fa-solid fa-chart-line"></i></div>
         <h3>Investors, Funds &amp; Innovation Actors</h3>
         <ul>
           <li>Venture capital and private equity actors</li>
@@ -848,7 +827,7 @@
         </ul>
       </div>
       <div class="serve-card fade-up">
-
+        <div class="serve-icon"><i class="fa-solid fa-landmark"></i></div>
         <h3>Institutions &amp; Partner Organisations</h3>
         <ul>
           <li>Luxembourg Chamber of Commerce, embassies and ministries</li>
@@ -857,7 +836,7 @@
         </ul>
       </div>
       <div class="serve-card fade-up">
-
+        <div class="serve-icon"><i class="fa-solid fa-people-group"></i></div>
         <h3>The Wider Community</h3>
         <ul>
           <li>The Romanian community in Luxembourg</li>
