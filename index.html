@@ -338,9 +338,20 @@
     .press-list { list-style: none; }
     .press-item {
       padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,0.06);
-      transition: var(--animation);
+      transition: var(--animation); display: flex; gap: 1rem; align-items: flex-start;
     }
     .press-item:hover { padding-left: 0.5rem; }
+    .press-item .outlet-logo {
+      width: 80px; min-width: 80px; height: 32px;
+      display: flex; align-items: center; justify-content: flex-start;
+      flex-shrink: 0; padding-top: 0.15rem;
+    }
+    .press-item .outlet-logo img {
+      max-width: 80px; max-height: 28px; object-fit: contain; object-position: left center;
+      filter: grayscale(100%); opacity: 0.7; transition: var(--animation);
+    }
+    .press-item:hover .outlet-logo img { filter: grayscale(0%); opacity: 1; }
+    .press-item .press-body { flex: 1; }
     .press-item .outlet {
       font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
       letter-spacing: 1px; color: var(--red); margin-bottom: 0.2rem;
@@ -452,31 +463,35 @@
 
     /* OUTLOOK CLOSING */
     .outlook-closing {
-      margin-top: 3rem; padding: 2.5rem;
-      background: rgba(0,0,0,0.04); border-radius: var(--radius);
-      border: 1px solid rgba(0,0,0,0.08); text-align: center;
+      margin-top: 3rem; padding: 2.5rem 3rem;
+      background: rgba(255,255,255,0.6); border-radius: var(--radius);
+      border: 1px solid rgba(0,0,0,0.06); text-align: center;
+      position: relative; border-top: 3px solid var(--red);
     }
-    .outlook-closing h3 { font-size: 1.2rem; font-weight: 700; color: var(--charcoal); margin-bottom: 1rem; }
-    .outlook-closing p { font-size: 0.95rem; color: rgba(0,0,0,0.5); max-width: 800px; margin: 0 auto 0.75rem; }
-    .outlook-closing em { color: rgba(0,0,0,0.7); }
+    .outlook-closing h3 { font-size: 1.3rem; font-weight: 800; color: var(--charcoal); margin-bottom: 1rem; }
+    .outlook-closing p { font-size: 0.95rem; color: rgba(0,0,0,0.5); max-width: 800px; margin: 0 auto 0.75rem; line-height: 1.7; }
+    .outlook-closing em { color: var(--charcoal); font-weight: 600; font-size: 1.05rem; }
 
     /* STRATEGIC OUTLOOK */
     .outlook-grid {
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
     }
     .outlook-card {
-      background: rgba(255,255,255,0.5); border-radius: var(--radius);
-      padding: 2rem; border: 1px solid rgba(0,0,0,0.08);
-      transition: var(--animation);
+      background: rgba(255,255,255,0.7); border-radius: var(--radius);
+      padding: 2rem 2rem 2rem 2.5rem; border: 1px solid rgba(0,0,0,0.06);
+      border-left: 4px solid var(--red);
+      transition: var(--animation); display: flex; gap: 1.2rem; align-items: flex-start;
     }
-    .outlook-card:hover { background: rgba(255,255,255,0.8); transform: translateY(-3px); }
-    .outlook-card .num {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 32px; height: 32px; border-radius: 8px;
-      background: var(--red); color: white; font-weight: 800; font-size: 0.8rem;
-      margin-bottom: 1rem;
+    .outlook-card:hover { background: rgba(255,255,255,0.95); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+    .outlook-card .outlook-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--red); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
     }
-    .outlook-card h3 { font-size: 1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.75rem; }
+    .outlook-card .outlook-body { flex: 1; }
+    .outlook-card:last-child { grid-column: 1 / -1; }
+    .outlook-card h3 { font-size: 1.05rem; font-weight: 800; color: var(--charcoal); margin-bottom: 0.75rem; }
     .outlook-card ul { list-style: none; }
     .outlook-card li {
       font-size: 0.85rem; color: rgba(0,0,0,0.6); padding: 0.25rem 0;
@@ -1270,69 +1285,108 @@
         <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;">Media Coverage &ndash; Romanian Pavilion @ Nexus 2025</h3>
         <ul class="press-list">
           <li class="press-item">
-            <div class="outlet">Silicon Luxembourg</div>
-            <div class="headline">What Luxembourg Can Learn From The Romanian Startup Ecosystem</div>
-            <div class="date">14 June 2025</div>
+            <div class="outlet-logo"><img src="media/logos/silicon-luxembourg.png" alt="Silicon Luxembourg"></div>
+            <div class="press-body">
+              <div class="outlet">Silicon Luxembourg</div>
+              <div class="headline">What Luxembourg Can Learn From The Romanian Startup Ecosystem</div>
+              <div class="date">14 June 2025</div>
+            </div>
           </li>
           <li class="press-item">
-            <div class="outlet">AmCham</div>
-            <div class="headline">Romanian Innovation on Display at Nexus on June 17&ndash;18</div>
-            <div class="date">11 June 2025</div>
+            <div class="outlet-logo"><img src="media/logos/amcham.png" alt="AmCham"></div>
+            <div class="press-body">
+              <div class="outlet">AmCham</div>
+              <div class="headline">Romanian Innovation on Display at Nexus on June 17&ndash;18</div>
+              <div class="date">11 June 2025</div>
+            </div>
           </li>
           <li class="press-item">
-            <div class="outlet">Techsense</div>
-            <div class="headline">Ten Romanian Companies Showcase Cutting-Edge Tech at Nexus 2025</div>
-            <div class="date">13 June 2025</div>
+            <div class="outlet-logo"><img src="media/logos/techsense.png" alt="Techsense"></div>
+            <div class="press-body">
+              <div class="outlet">Techsense</div>
+              <div class="headline">Ten Romanian Companies Showcase Cutting-Edge Tech at Nexus 2025</div>
+              <div class="date">13 June 2025</div>
+            </div>
           </li>
           <li class="press-item">
-            <div class="outlet">Techsense</div>
-            <div class="headline">Romanian Innovation on Display at Nexus: AI, Digital Security, Robotics and More</div>
-            <div class="date">12 June 2025</div>
+            <div class="outlet-logo"><img src="media/logos/techsense.png" alt="Techsense"></div>
+            <div class="press-body">
+              <div class="outlet">Techsense</div>
+              <div class="headline">Romanian Innovation on Display at Nexus: AI, Digital Security, Robotics and More</div>
+              <div class="date">12 June 2025</div>
+            </div>
           </li>
           <li class="press-item">
-            <div class="outlet">Digitalio</div>
-            <div class="headline">Inova&#539;ia rom&acirc;neasc&#259; a atras toate privirile la Nexus Luxemburg 2025</div>
-            <div class="date">2 July 2025</div>
+            <div class="outlet-logo"><img src="media/logos/digitalio.png" alt="Digitalio"></div>
+            <div class="press-body">
+              <div class="outlet">Digitalio</div>
+              <div class="headline">Inova&#539;ia rom&acirc;neasc&#259; a atras toate privirile la Nexus Luxemburg 2025</div>
+              <div class="date">2 July 2025</div>
+            </div>
           </li>
           <li class="press-item">
-            <div class="outlet">Cluj.info</div>
-            <div class="headline">De la Cluj spre Europa: Companiile tech rom&acirc;ne&#537;ti, invitate la Nexus Luxembourg 2025</div>
-            <div class="date">15 April 2025</div>
+            <div class="outlet-logo"><img src="media/logos/clujinfo.png" alt="Cluj.info"></div>
+            <div class="press-body">
+              <div class="outlet">Cluj.info</div>
+              <div class="headline">De la Cluj spre Europa: Companiile tech rom&acirc;ne&#537;ti, invitate la Nexus Luxembourg 2025</div>
+              <div class="date">15 April 2025</div>
+            </div>
           </li>
           <li class="press-item">
-            <div class="outlet">RomLux</div>
-            <div class="headline">Expertise and High-Tech Made in Romania &ndash; Nexus Luxembourg 2025</div>
-            <div class="date">10 June 2025</div>
+            <div class="outlet-logo"><img src="media/logos/romlux.png" alt="RomLux"></div>
+            <div class="press-body">
+              <div class="outlet">RomLux</div>
+              <div class="headline">Expertise and High-Tech Made in Romania &ndash; Nexus Luxembourg 2025</div>
+              <div class="date">10 June 2025</div>
+            </div>
           </li>
           <li class="press-item">
-            <div class="outlet">Techsense</div>
-            <div class="headline">New Akord Security at Nexus Luxembourg 2025</div>
-            <div class="date">17 June 2025</div>
+            <div class="outlet-logo"><img src="media/logos/techsense.png" alt="Techsense"></div>
+            <div class="press-body">
+              <div class="outlet">Techsense</div>
+              <div class="headline">New Akord Security at Nexus Luxembourg 2025</div>
+              <div class="date">17 June 2025</div>
+            </div>
           </li>
           <li class="press-item">
-            <div class="outlet">Techsense</div>
-            <div class="headline">Euro Testing Software Solutions, Newcomer to Nexus Luxembourg 2025</div>
-            <div class="date">18 June 2025</div>
+            <div class="outlet-logo"><img src="media/logos/techsense.png" alt="Techsense"></div>
+            <div class="press-body">
+              <div class="outlet">Techsense</div>
+              <div class="headline">Euro Testing Software Solutions, Newcomer to Nexus Luxembourg 2025</div>
+              <div class="date">18 June 2025</div>
+            </div>
           </li>
           <li class="press-item">
-            <div class="outlet">Techsense</div>
-            <div class="headline">Tech is Reshaping Every Industry &ndash; Do You Have the Leadership to Keep Up?</div>
-            <div class="date">15 June 2025</div>
+            <div class="outlet-logo"><img src="media/logos/techsense.png" alt="Techsense"></div>
+            <div class="press-body">
+              <div class="outlet">Techsense</div>
+              <div class="headline">Tech is Reshaping Every Industry &ndash; Do You Have the Leadership to Keep Up?</div>
+              <div class="date">15 June 2025</div>
+            </div>
           </li>
           <li class="press-item">
-            <div class="outlet">Techsense</div>
-            <div class="headline">Agora Robotics at Nexus</div>
-            <div class="date">17 June 2025</div>
+            <div class="outlet-logo"><img src="media/logos/techsense.png" alt="Techsense"></div>
+            <div class="press-body">
+              <div class="outlet">Techsense</div>
+              <div class="headline">Agora Robotics at Nexus</div>
+              <div class="date">17 June 2025</div>
+            </div>
           </li>
           <li class="press-item">
-            <div class="outlet">Techsense</div>
-            <div class="headline">AROBS Returns to Nexus Luxembourg 2025 &ndash; Expertise and High-Tech Made in Romania</div>
-            <div class="date">16 June 2025</div>
+            <div class="outlet-logo"><img src="media/logos/techsense.png" alt="Techsense"></div>
+            <div class="press-body">
+              <div class="outlet">Techsense</div>
+              <div class="headline">AROBS Returns to Nexus Luxembourg 2025 &ndash; Expertise and High-Tech Made in Romania</div>
+              <div class="date">16 June 2025</div>
+            </div>
           </li>
           <li class="press-item">
-            <div class="outlet">Chronicle</div>
-            <div class="headline">RomLux Launches Networking Event Featuring Romanian Tech &amp; Local Business</div>
-            <div class="date">5 June 2025</div>
+            <div class="outlet-logo"><img src="media/logos/chronicle.png" alt="Chronicle.lu"></div>
+            <div class="press-body">
+              <div class="outlet">Chronicle</div>
+              <div class="headline">RomLux Launches Networking Event Featuring Romanian Tech &amp; Local Business</div>
+              <div class="date">5 June 2025</div>
+            </div>
           </li>
         </ul>
       </div>
@@ -1374,67 +1428,81 @@
     </div>
     <div class="outlook-grid">
       <div class="outlook-card fade-up">
-
-        <h3>Deepening Bilateral Economic Cooperation</h3>
-        <ul>
-          <li>Targeted business delegations and sector missions</li>
-          <li>Structured B2B matchmaking formats</li>
-          <li>Focus: IT, cybersecurity, fintech, space, logistics, energy</li>
-        </ul>
+        <div class="outlook-icon"><i class="fa-solid fa-handshake"></i></div>
+        <div class="outlook-body">
+          <h3>Deepening Bilateral Economic Cooperation</h3>
+          <ul>
+            <li>Targeted business delegations and sector missions</li>
+            <li>Structured B2B matchmaking formats</li>
+            <li>Focus: IT, cybersecurity, fintech, space, logistics, energy</li>
+          </ul>
+        </div>
       </div>
       <div class="outlook-card fade-up">
-
-        <h3>Strengthening Romania's Innovation Position</h3>
-        <ul>
-          <li>National pavilions at Nexus2050, ICT Spring, ARCH Summit</li>
-          <li>Introductions to Luxembourg investors and accelerators</li>
-          <li>Promoting Romania as a competitive EU innovation partner</li>
-        </ul>
+        <div class="outlook-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <div class="outlook-body">
+          <h3>Strengthening Romania's Innovation Position</h3>
+          <ul>
+            <li>National pavilions at Nexus2050, ICT Spring, ARCH Summit</li>
+            <li>Introductions to Luxembourg investors and accelerators</li>
+            <li>Promoting Romania as a competitive EU innovation partner</li>
+          </ul>
+        </div>
       </div>
       <div class="outlook-card fade-up">
-
-        <h3>Expanding Knowledge Sharing</h3>
-        <ul>
-          <li>Country seminars with Luxembourg Chamber of Commerce</li>
-          <li>Expanding Knowledge Caf&eacute; and Entrepreneurs Network</li>
-          <li>Thematic working groups on priority sectors</li>
-        </ul>
+        <div class="outlook-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="outlook-body">
+          <h3>Expanding Knowledge Sharing</h3>
+          <ul>
+            <li>Country seminars with Luxembourg Chamber of Commerce</li>
+            <li>Expanding Knowledge Caf&eacute; and Entrepreneurs Network</li>
+            <li>Thematic working groups on priority sectors</li>
+          </ul>
+        </div>
       </div>
       <div class="outlook-card fade-up">
-
-        <h3>Scaling RomLux Connect Platform</h3>
-        <ul>
-          <li>Expanding registered companies on connect.romlux.org</li>
-          <li>Increasing visibility in business communities</li>
-          <li>Integrating into events, delegations and business missions</li>
-        </ul>
+        <div class="outlook-icon"><i class="fa-solid fa-globe"></i></div>
+        <div class="outlook-body">
+          <h3>Scaling RomLux Connect Platform</h3>
+          <ul>
+            <li>Expanding registered companies on connect.romlux.org</li>
+            <li>Increasing visibility in business communities</li>
+            <li>Integrating into events, delegations and business missions</li>
+          </ul>
+        </div>
       </div>
       <div class="outlook-card fade-up">
-
-        <h3>Enhancing Institutional Cooperation &amp; Advocacy</h3>
-        <ul>
-          <li>Structured business exchanges with Luxembourg Chamber of Commerce</li>
-          <li>Strengthening cooperation with embassies and bilateral chambers</li>
-          <li>Promoting connectivity projects &mdash; building on Luxair LU&ndash;Bucharest flight</li>
-        </ul>
+        <div class="outlook-icon"><i class="fa-solid fa-building-columns"></i></div>
+        <div class="outlook-body">
+          <h3>Enhancing Institutional Cooperation &amp; Advocacy</h3>
+          <ul>
+            <li>Structured business exchanges with Luxembourg Chamber of Commerce</li>
+            <li>Strengthening cooperation with embassies and bilateral chambers</li>
+            <li>Promoting connectivity projects &mdash; building on Luxair LU&ndash;Bucharest flight</li>
+          </ul>
+        </div>
       </div>
       <div class="outlook-card fade-up">
-
-        <h3>Sustaining Cultural Diplomacy &amp; Charitable Engagement</h3>
-        <ul>
-          <li>Romanian stand at Bazar International de Luxembourg</li>
-          <li>Charity concerts, Race for a Cause karting and fundraising initiatives</li>
-          <li>Cultural exhibitions, theatre performances and concerts promoting Romanian heritage</li>
-        </ul>
+        <div class="outlook-icon"><i class="fa-solid fa-palette"></i></div>
+        <div class="outlook-body">
+          <h3>Sustaining Cultural Diplomacy &amp; Charitable Engagement</h3>
+          <ul>
+            <li>Romanian stand at Bazar International de Luxembourg</li>
+            <li>Charity concerts, Race for a Cause karting and fundraising initiatives</li>
+            <li>Cultural exhibitions, theatre performances and concerts promoting Romanian heritage</li>
+          </ul>
+        </div>
       </div>
       <div class="outlook-card fade-up">
-
-        <h3>Growing &amp; Engaging the RomLux Community</h3>
-        <ul>
-          <li>Attracting new corporate and individual members</li>
-          <li>Increasing peer interaction, collaboration and cross-sector dialogue</li>
-          <li>Remaining member-driven, guided by inclusiveness and long-term relationship building</li>
-        </ul>
+        <div class="outlook-icon"><i class="fa-solid fa-users"></i></div>
+        <div class="outlook-body">
+          <h3>Growing &amp; Engaging the RomLux Community</h3>
+          <ul>
+            <li>Attracting new corporate and individual members</li>
+            <li>Increasing peer interaction, collaboration and cross-sector dialogue</li>
+            <li>Remaining member-driven, guided by inclusiveness and long-term relationship building</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="outlook-closing fade-up">
