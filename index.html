@@ -80,7 +80,7 @@
       min-height: 100vh; display: flex; flex-direction: column; align-items: center;
       justify-content: center;
       background: linear-gradient(180deg, #4a6fa5 0%, #6a9bc5 30%, #8fbdda 60%, #b5d6ea 100%);
-      position: relative; overflow: hidden; text-align: center; padding: 3rem 2rem 0.5rem;
+      position: relative; overflow: hidden; text-align: center; padding: 4rem 2rem 0.5rem;
     }
     .hero-content {
       position: relative; z-index: 2; max-width: 900px; width: 100%;
@@ -89,12 +89,12 @@
     }
     .hero-title-block { margin-bottom: 0; }
     .hero-title-block h1 {
-      font-size: clamp(2.5rem, 6vw, 3.8rem); font-weight: 900;
-      color: white; line-height: 1; margin: 0;
+      font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900;
+      color: white; line-height: 1.05; margin: 0;
       letter-spacing: 6px; text-transform: uppercase;
     }
     .hero-title-block .year {
-      font-size: clamp(3.5rem, 10vw, 7rem); font-weight: 900;
+      font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900;
       color: rgba(255,255,255,0.6); line-height: 0.85; display: block;
       letter-spacing: 8px; margin-top: -0.05em;
     }
@@ -195,7 +195,7 @@
       width: 28px; text-align: center; flex-shrink: 0; font-size: 1.15rem;
     }
     .number-row.accent-blue .row-icon { color: #2a7fbf; }
-    .number-row.accent-gold .row-icon { color: #c9960a; }
+    .number-row.accent-gold .row-icon { color: #FCD116; }
     .number-row.accent-green .row-icon { color: #2d8a5e; }
     .number-row.accent-coral .row-icon { color: #c0392b; }
     .number-row.accent-teal .row-icon { color: #2a9d8f; }
@@ -204,7 +204,7 @@
       min-width: 4.5rem; text-align: left;
     }
     .number-row.accent-blue .value { color: #2a7fbf; }
-    .number-row.accent-gold .value { color: #c9960a; }
+    .number-row.accent-gold .value { color: #FCD116; }
     .number-row.accent-green .value { color: #2d8a5e; }
     .number-row.accent-coral .value { color: #c0392b; }
     .number-row.accent-teal .value { color: #2a9d8f; }
@@ -516,14 +516,14 @@
 
     /* FOOTER */
     .footer {
-      background: var(--dark); color: rgba(255,255,255,0.5);
+      background: white; color: rgba(0,0,0,0.45);
       padding: 3rem 2rem 1.5rem; text-align: center;
     }
     .footer-logo { margin-bottom: 0.5rem; }
-    .footer-logo img { height: 50px; width: auto; filter: brightness(0) invert(1); }
+    .footer-logo img { height: 50px; width: auto; }
     .footer p { font-size: 0.85rem; margin-bottom: 0.5rem; }
-    .footer a { color: var(--red-light); text-decoration: none; }
-    .footer .copy { font-size: 0.75rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer a { color: var(--red); text-decoration: none; }
+    .footer .copy { font-size: 0.75rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.08); }
 
     /* MOBILE NAV */
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
@@ -598,7 +598,7 @@
 <section class="hero">
   <div class="hero-content">
     <div class="hero-title-block">
-      <h1>Annual Report<span class="year">2025</span></h1>
+      <h1>RomLux Annual Report<span class="year">2025</span></h1>
     </div>
     <div class="hero-image-wrap">
       <img src="media/kirchberg-panorama.png" alt="Kirchberg, Luxembourg European Quarter">
@@ -1419,7 +1419,7 @@
 </section>
 
 <!-- STRATEGIC OUTLOOK -->
-<section class="section" id="outlook" style="background: #f3ece2; color: var(--charcoal);">
+<section class="section" id="outlook" style="background: #e0ecf5; color: var(--charcoal);">
   <div class="container">
     <div class="section-header fade-up">
       <div class="tag">Looking Ahead</div>
