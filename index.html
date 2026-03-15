@@ -305,32 +305,32 @@
     .cat-culture { background: rgba(107,76,94,0.15); color: var(--plum); }
 
     .event-card {
-      display: grid; grid-template-columns: 400px 1fr; gap: 0; align-items: stretch;
-      background: white; border-radius: var(--radius); overflow: hidden;
-      box-shadow: var(--shadow); margin-bottom: 1.75rem; transition: var(--animation);
-      border: 1px solid rgba(0,0,0,0.08);
+      display: grid; grid-template-columns: 480px 1fr; gap: 0; align-items: stretch;
+      background: #ffffff; border-radius: var(--radius); overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10); margin-bottom: 2rem; transition: var(--animation);
+      border: 1px solid rgba(0,0,0,0.06);
     }
     .event-card:nth-child(odd) { direction: rtl; }
     .event-card:nth-child(odd) > * { direction: ltr; }
     .event-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
     .event-card.featured {
-      grid-template-columns: 480px 1fr;
+      grid-template-columns: 540px 1fr;
     }
     .event-card img {
-      width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; min-height: 280px;
+      width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; min-height: 340px;
     }
-    .event-card.featured img { min-height: 320px; }
-    .event-info { padding: 1.75rem 2rem; display: flex; flex-direction: column; justify-content: center; }
-    .event-card.featured .event-info { padding: 2rem 2.5rem; }
+    .event-card.featured img { min-height: 380px; }
+    .event-info { padding: 2rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .event-card.featured .event-info { padding: 2.5rem 3rem; }
     .event-date {
-      font-size: 0.85rem; font-weight: 700; color: var(--red);
-      text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.6rem;
+      font-size: 0.95rem; font-weight: 700; color: var(--red);
+      text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem;
     }
-    .event-info h3 { font-size: 1.25rem; font-weight: 700; color: var(--dark); margin-bottom: 0.6rem; }
-    .event-info p { font-size: 1rem; color: var(--gray); margin-bottom: 0.6rem; line-height: 1.5; }
+    .event-info h3 { font-size: 1.4rem; font-weight: 700; color: var(--dark); margin-bottom: 0.75rem; }
+    .event-info p { font-size: 1.1rem; color: var(--gray); margin-bottom: 0.75rem; line-height: 1.6; }
     .event-impact {
-      font-size: 0.92rem; color: var(--sage); font-style: italic;
-      padding-left: 0.75rem; border-left: 2px solid var(--sage); line-height: 1.5;
+      font-size: 1rem; color: var(--sage); font-style: italic;
+      padding-left: 0.75rem; border-left: 2px solid var(--sage); line-height: 1.6;
     }
 
     /* PRESS */
@@ -549,7 +549,10 @@
       .serve-grid { grid-template-columns: 1fr; }
       .members-grid { grid-template-columns: repeat(2, 1fr); }
       .event-card { grid-template-columns: 1fr; }
-      .event-card img { min-height: unset; max-height: 250px; aspect-ratio: 4/3; }
+      .event-card img { min-height: unset; max-height: 300px; aspect-ratio: 4/3; }
+      .event-info { padding: 1.5rem 1.25rem; }
+      .event-info h3 { font-size: 1.2rem; }
+      .event-info p { font-size: 1rem; }
       .event-info { padding: 1.5rem !important; }
       .press-grid { grid-template-columns: 1fr; }
       .outlook-grid { grid-template-columns: 1fr; }
@@ -973,52 +976,164 @@
     </div>
     <div class="members-grid">
       <div class="member-card fade-up">
-        <img src="media/arobs.png" alt="AROBS">
-        <div class="name">AROBS Transilvania Software SA</div>
+        <img src="media/member-logos/adamo-technology.png" alt="Adamo Technology">
+        <div class="name">ADAMO TECHNOLOGY SRL</div>
       </div>
       <div class="member-card fade-up">
-        <img src="media/fiduciaire-lpg.png" alt="Fiduciaire LPG" style="background:#2D3436;padding:8px;border-radius:8px;">
-        <div class="name">Fiduciaire LPG</div>
-      </div>
-      <div class="member-card fade-up">
-        <img src="media/hatwit.jpg" alt="Hatwit International">
-        <div class="name">Hatwit International</div>
-      </div>
-      <div class="member-card fade-up">
-        <img src="media/newakord.png" alt="New Akord">
-        <div class="name">NEW AKORD SECURITY SRL</div>
-      </div>
-      <div class="member-card fade-up">
-        <img src="media/microgrup.png" alt="Micro Grup">
-        <div class="name">MICRO GRUP BUSINESS SOLUTION SRL</div>
-      </div>
-      <div class="member-card fade-up">
-        <img src="media/rmt-labs.png" alt="RMT Labs">
-        <div class="name">RMT Labs S.A.</div>
-      </div>
-      <div class="member-card fade-up">
-        <img src="media/ebs-integrator.png" alt="EBS Integrator">
-        <div class="name">EBS Integrator Sarl</div>
-      </div>
-      <div class="member-card fade-up">
-        <img src="media/mediahuis.png" alt="Mediahuis">
-        <div class="name">MEDIAHUIS Luxembourg S.A.</div>
+        <img src="media/member-logos/afluent.png" alt="Afluent">
+        <div class="name">Afluent Arad South Terminal</div>
       </div>
       <div class="member-card fade-up">
         <img src="media/agora-robotics.png" alt="Agora Robotics">
         <div class="name">Agora Robotics SRL</div>
       </div>
       <div class="member-card fade-up">
+        <img src="media/arobs.png" alt="AROBS">
+        <div class="name">AROBS Transilvania Software SA</div>
+      </div>
+      <div class="member-card fade-up">
         <img src="media/blackbullet.png" alt="Black Bullet">
-        <div class="name">Black Bullet Cybersecurity Solutions</div>
+        <div class="name">Black Bullet</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/buda-asociatii.png" alt="Buda si Asociatii">
+        <div class="name">Buda si Asociatii SPARL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/cabinet-medical-kirchberg.png" alt="Cabinet Medical Kirchberg">
+        <div class="name">Cabinet Medical Kirchberg</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/capital-decisions.png" alt="Capital Decisions">
+        <div class="name">CAPITAL DECISIONS SRL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/charles-oakes.jpg" alt="Charles Oakes">
+        <div class="name">Charles Oakes &amp; Co SARL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/deloitte.png" alt="Deloitte">
+        <div class="name">Deloitte Tax &amp; Consulting (Luxembourg)</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/deziclean.png" alt="Deziclean">
+        <div class="name">DEZICLEAN RETAIL DIVISION SRL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/ebs-integrator.png" alt="EBS Integrator">
+        <div class="name">EBS Integrator Sarl</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/eco-partnersheep.png" alt="Eco Partnersheep">
+        <div class="name">Eco Partnersheep Insulation S.R.L.</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/eri-bancaire.jpg" alt="ERI Bancaire">
+        <div class="name">ERI BANCAIRE Luxembourg S.A.</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/fiduciaire-lpg-dark.png" alt="Fiduciaire LPG">
+        <div class="name">Fiduciaire LPG</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/frontier-connect-dark.png" alt="Frontier Connect">
+        <div class="name">FRONTIER CONNECT SARL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/groupe-agrilux.png" alt="Groupe Agrilux">
+        <div class="name">Groupe Agrilux S.A.</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/hatwit.jpg" alt="Hatwit International">
+        <div class="name">Hatwit International</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/iservice.png" alt="IService">
+        <div class="name">IService sarls</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/it-embassy.png" alt="IT Embassy">
+        <div class="name">IT EMBASSY SRL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/lecole-des-valeurs-dark.png" alt="L'Ecole des Valeurs">
+        <div class="name">L&rsquo;Ecole des Valeurs</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/legacy-capital.png" alt="Legacy Capital">
+        <div class="name">Legacy Capital</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/lendrise.png" alt="Lendrise">
+        <div class="name">LENDRISE MARKETPLACE SRL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/leroy-asociatii.png" alt="Leroy &amp; Asociatii">
+        <div class="name">Leroy &amp; Asociatii SCA</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/marcegaglia.png" alt="Marcegaglia">
+        <div class="name">Marcegaglia North Europe</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/meaningfy.png" alt="Meaningfy">
+        <div class="name">Meaningfy Sarls</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/mediahuis.png" alt="Mediahuis">
+        <div class="name">MEDIAHUIS Luxembourg S.A.</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/microgrup.png" alt="Micro Grup">
+        <div class="name">MICRO GRUP BUSINESS SOLUTION SRL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/newakord.png" alt="New Akord">
+        <div class="name">NEW AKORD SECURITY SRL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/nonsense-labs.png" alt="Nonsense Labs">
+        <div class="name">Nonsense Labs SaRL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/nord-spedition.png" alt="Nord Spedition">
+        <div class="name">NORD SPEDITION</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/outthink-dark.png" alt="OutThink">
+        <div class="name">OutThink Ltd</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/plant-an-app.png" alt="Plant an App">
+        <div class="name">Plant an App</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/project1-dark.png" alt="Project1">
+        <div class="name">Project1 General Contracting SRL</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/rmt-labs.png" alt="RMT Labs">
+        <div class="name">RMT Labs S.A.</div>
       </div>
       <div class="member-card fade-up">
         <img src="media/roca.png" alt="Roca Management">
         <div class="name">Roca Management SRL</div>
       </div>
       <div class="member-card fade-up">
+        <img src="media/member-logos/roude-leiw.jpg" alt="Roude Leiw Polo Club">
+        <div class="name">ROUDE LEIW POLO CLUB</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/soft-tehnica-holardev.png" alt="Soft Tehnica / HolarDev">
+        <div class="name">Soft Tehnica / HolarDev</div>
+      </div>
+      <div class="member-card fade-up">
         <img src="media/soft-tehnica.png" alt="Soft Tehnica">
         <div class="name">Soft Tehnica Romania</div>
+      </div>
+      <div class="member-card fade-up">
+        <img src="media/member-logos/tpl-consulting.png" alt="TPL Consulting">
+        <div class="name">TPL Consulting S.&agrave; r.l.-S</div>
       </div>
     </div>
     <div class="member-cta fade-up">
